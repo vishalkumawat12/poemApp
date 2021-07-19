@@ -5,13 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".addPoetry">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/Apppoetrytool"
+        app:title="Add poetry"/>
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="60dp"
+        android:inputType="text"
+        android:hint="Add poetry data"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        android:id="@+id/add_poetry_data"
+        android:background="@drawable/edittextbg"
+        />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="40dp"
+        android:minHeight="60dp"
+        android:layout_marginTop="10dp"
         android:inputType="text"
+        android:hint="Add poet name"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        android:id="@+id/add_poet_name"
         android:background="@drawable/edittextbg"
         />
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/subdata"
+        android:text="Submit"
+        android:background="@drawable/btn_bg_design"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:textAllCaps="false"/>
 </LinearLayout>

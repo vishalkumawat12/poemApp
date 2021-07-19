@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.poem.Api.ApiClient;
 import com.example.poem.Api.ApiInterface;
 import com.example.poem.R;
+import com.example.poem.Responce.DeleteResponse;
 import com.example.poem.Responce.GetPoetryResponse;
 import com.example.poem.models.PoetryModel;
 
@@ -81,9 +82,9 @@ public class Poetryadapter extends RecyclerView.Adapter<Poetryadapter.ViewHolder
         }
     }
     private void deletepoetry(String id,int pose){
-        apiInterface.deletepoetry(id).enqueue(new Callback<GetPoetryResponse>() {
+        apiInterface.deletepoetry(id).enqueue(new Callback<DeleteResponse>() {
             @Override
-            public void onResponse(Call<GetPoetryResponse> call, Response<GetPoetryResponse> response) {
+            public void onResponse(Call<DeleteResponse> call, Response<DeleteResponse> response) {
                 try {
                     if (response!=null){
                         Toast.makeText(context, response.body().getMessage(), Toast.LENGTH_LONG).show();
@@ -97,8 +98,10 @@ public class Poetryadapter extends RecyclerView.Adapter<Poetryadapter.ViewHolder
                 }
             }
 
+
+
             @Override
-            public void onFailure(Call<GetPoetryResponse> call, Throwable t) {
+            public void onFailure(Call<DeleteResponse> call, Throwable t) {
                 Log.e("failure",t.getLocalizedMessage());
             }
         });

@@ -6,6 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -89,11 +91,14 @@ Toolbar toolbar;
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.add_poetry:
-                Toast.makeText(this, "Add poetry clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Add poetry clicked", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(MainActivity.this,addPoetry.class);
+                startActivity(intent);
 
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }
