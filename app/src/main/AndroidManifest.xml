@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Poem"
         android:usesCleartextTraffic="true">
-        <activity android:name=".addPoetry"></activity>
+        <activity android:name=".update_poetry"></activity>
+        <activity android:name=".addPoetry" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

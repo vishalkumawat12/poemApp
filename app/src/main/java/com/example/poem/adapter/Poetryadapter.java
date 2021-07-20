@@ -1,6 +1,7 @@
 package com.example.poem.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.example.poem.R;
 import com.example.poem.Responce.DeleteResponse;
 import com.example.poem.Responce.GetPoetryResponse;
 import com.example.poem.models.PoetryModel;
+import com.example.poem.update_poetry;
 
 import java.util.List;
 
@@ -57,6 +59,16 @@ public class Poetryadapter extends RecyclerView.Adapter<Poetryadapter.ViewHolder
                 deletepoetry(poetryModels.get(position).getId()+"",position);
 
             }
+        });
+        holder.updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, poetryModels.get(position).getId()+"\n"+poetryModels.get(position).getPoetry_data(), Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(context, update_poetry.class);
+                intent.putExtra("pid",poetryModels.get(position).getId());
+                intent.putExtra("p_data",poetryModels.get(position).getPoetry_data());
+                context.startActivity(intent);
+           }
         });
 
 
@@ -105,6 +117,7 @@ public class Poetryadapter extends RecyclerView.Adapter<Poetryadapter.ViewHolder
                 Log.e("failure",t.getLocalizedMessage());
             }
         });
+
     }
 
 }
